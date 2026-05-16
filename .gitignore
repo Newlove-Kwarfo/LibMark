@@ -1,0 +1,32 @@
+# Prerequisites
+*.d
+*.o
+*.obj
+
+# Linker files
+*.ilk
+*.pdb
+*.exp
+
+# Executables
+*.exe
+*.out
+*.app
+
+# IDE - Code::Blocks
+*.depend
+*.layout
+
+# IDE - VS Code
+.vscode/
+
+# Qt / Qmake generated files
+Makefile
+Makefile.Debug
+Makefile.Release
+object_script.*
+ui_*.h
+debug/
+release/
+*.moc
+moc_*.cpp
