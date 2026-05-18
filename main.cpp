@@ -8,7 +8,7 @@ int main(){
     std::cout << " LIBMARK SYSTEM ENGINE BOOT \n";
 
     //instantiating a book using constructor2
-    Libmark::Book myBook("Aurum", "Evolwen Kay", 200);
+    Libmark::Book myBook("Aurum", "Evolwen Kay",200);
 
     //creating some reading notes
     //note1 - note with page
@@ -18,6 +18,11 @@ int main(){
 
     myBook.addNote(note1);
     myBook.addNote(note2);
+    myBook.setType(Libmark::BookType::HARDCOVER);
+    myBook.updateStatus(Libmark::BookStatus::READING);
+    myBook.setCurrentPage(109);
+    myBook.addGenre("Crime");
+    myBook.addGenre("Mystery");
 
     //outputting book properties
     std::cout << " BOOK DETAILS \n";
@@ -25,8 +30,49 @@ int main(){
     std::cout << " Author:      " << myBook.getAuthor() << " \n";
     std::cout << " Total Pages: " << myBook.getTotalPages() << " \n";
     std::cout << " Current Page:" << myBook.getCurrentPage() << " \n";
+    
+    std::cout << "\n Status:      ";
+    switch (myBook.getStatus()){
+        case Libmark::BookStatus::WANT_TO_READ:
+            std::cout << "Want to read";
+            break;
+        case Libmark::BookStatus::READING:
+            std::cout << "Reading";
+            break;
+        case Libmark::BookStatus::COMPLETED:
+            std::cout << "Completed";
+            break;
+        case Libmark::BookStatus::ON_HOLD:
+            std::cout << "On hold";
+            break;
+        case Libmark::BookStatus::GAVE_UP:
+            std::cout << "Gave up";
+            break;
+    }
+    
+    std::cout << "\n Type:        ";
+    switch (myBook.getType()){
+        case Libmark::BookType::AUDIOBOOK:
+            std::cout << "Audiobook";
+            break;
+        case Libmark::BookType::PAPERBACK:
+            std::cout << "Paperback";
+            break;
+        case Libmark::BookType::HARDCOVER:
+            std::cout << "Hardcover";
+            break;
+        case Libmark::BookType::EBOOK:
+            std::cout << "Ebook";
+            break;
+    }
 
-    std::cout << " Book Notes: \n";
+    std::cout << "\n Genres:      ";
+    const std::vector<std::string>& bookGenres = myBook.getGenres();
+    for (size_t i=0; i<bookGenres.size(); ++i){
+        std::cout << bookGenres[i] << ", ";
+    }
+
+    std::cout << "\n\n Book Notes: \n";
 
     //createing a constant reference variable for notes getter
     const std::vector<Libmark::Note>& bookNotes = myBook.getNotes();

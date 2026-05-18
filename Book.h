@@ -5,31 +5,65 @@
 #include <vector>
 
 namespace Libmark {
+    enum class BookStatus {
+        WANT_TO_READ,
+        READING,
+        COMPLETED,
+        ON_HOLD,
+        GAVE_UP
+    };
+
+    enum class BookType {
+        PAPERBACK,
+        HARDCOVER,
+        EBOOK,
+        AUDIOBOOK,
+    };
+
     class Book{
     public:
-        //Constructor1 - with currentPage and notes
-        Book(const std::string& title, const std::string& author, int totalPages, int currentPage, const std::vector<Note>& notes);
-        //Constructor2 - without currentPage and notes
+        //Constructor1 - with currentPage
+        Book(const std::string& title, const std::string& author, int totalPages, int currentPage, BookType type, BookStatus status);
+        
+        //Constructor2 - without currentPage
         Book(const std::string& title, const std::string& author, int totalPages);
-        //Constructor3 - without notes
-        Book(const std::string& title, const std::string& author, int totalPages, int currentPage);
 
         //Behaviours
         void addNote(const Note& newNote);
+        void removeNote(int index);
+        void addGenre(const std::string& genre);
+        float calculateProgress() const;
 
         //Getters
         std::string getTitle() const;
         std::string getAuthor() const;
+        std::string getLanguage() const;
+        BookStatus getStatus() const;
+        BookType getType() const;
         int getTotalPages() const;
         int getCurrentPage() const;
         const std::vector<Note>& getNotes() const; //retreives all notes belonging to book
+        const std::vector<std::string>& getGenres() const;
 
+        //Setter
+        void setTitle(const std::string& newTitle);
+        void setAuthor(const std::string& newAuthor);
+        void setLanguage(const std::string& lang);
+        void setType(BookType newType);
+        void setTotalPages(int pages);
+        void setCurrentPage(int page);
+        void updateStatus(BookStatus newStatus);
 
+    
     private:
         std::string m_title;
         std::string m_author;
+        std::string m_language;
+        BookStatus m_status;
+        BookType m_type;
         int m_totalPages;
         int m_currentPage;
         std::vector<Note> m_notes;
+        std::vector<std::string> m_genres;
     }; //class Book
 } // namespace Libmark
