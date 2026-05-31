@@ -36,5 +36,8 @@ namespace Libmark {
     void Note::setNoteContent(const std::string newConent){
         m_noteContent = newConent;
     }
+    void Note::setDateCreated(const std::string newDate){
+        m_dateCreated = newDate;
+    }
 
 } // namespace Libmark

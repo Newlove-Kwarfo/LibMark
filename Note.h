@@ -17,6 +17,7 @@ namespace Libmark {
         //Setters
         void setPageNumber(int newPageNumber);
         void setNoteContent(const std::string newConent);
+        void setDateCreated(const std::string newDate);
 
     private:
         int m_pageNumber; //m_ conventionally denotes member variable of function

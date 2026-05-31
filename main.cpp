@@ -8,7 +8,7 @@ int main(){
     std::cout << " LIBMARK SYSTEM ENGINE BOOT \n";
 
     //instantiating a book using constructor2
-    Libmark::Book myBook("Aurum", "Evolwen Kay",200);
+    Libmark::Book myBook("Aurum", "Evolwen Kay", 200, Libmark::BookType::PAPERBACK, Libmark::BookStatus::READING);
 
     //creating some reading notes
     //note1 - note with page
@@ -19,7 +19,7 @@ int main(){
     myBook.addNote(note1);
     myBook.addNote(note2);
     myBook.setType(Libmark::BookType::HARDCOVER);
-    myBook.updateStatus(Libmark::BookStatus::READING);
+    myBook.updateStatus(Libmark::BookStatus::ON_HOLD);
     myBook.setCurrentPage(109);
     myBook.addGenre("Crime");
     myBook.addGenre("Mystery");

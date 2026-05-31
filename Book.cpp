@@ -4,7 +4,7 @@
 namespace Libmark {
         //Constructor1 - with currentPage
         Book::Book(const std::string& title, const std::string& author, int totalPages, int currentPage, BookType type, BookStatus status)
-            : m_title(title), m_author(author), m_totalPages(totalPages), m_currentPage(currentPage), m_type(BookType::PAPERBACK), m_status(BookStatus::READING)
+            : m_title(title), m_author(author), m_totalPages(totalPages), m_currentPage(currentPage), m_type(type), m_status(status)
             {
                 //
             }
