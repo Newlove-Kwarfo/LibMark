@@ -10,8 +10,8 @@ namespace Libmark {
             }
         
         //Constructor2 - without currentPage
-        Book::Book(const std::string& title, const std::string& author, int totalPages)
-            : m_title(title), m_author(author), m_totalPages(totalPages), m_currentPage(0), m_type(BookType::PAPERBACK), m_status(BookStatus::WANT_TO_READ)
+        Book::Book(const std::string& title, const std::string& author, int totalPages, BookType type, BookStatus status)
+            : m_title(title), m_author(author), m_totalPages(totalPages), m_currentPage(0), m_type(type), m_status(status)
             {
                 //
             }
@@ -66,6 +66,19 @@ namespace Libmark {
         const std::vector<std::string>& Book::getGenres() const {
             return m_genres;
         }
+        float Book::getRating() const{
+            return m_rating;
+        }
+        std::string Book::getReview() const{
+            return m_review;
+        }
+        std::string Book::getIsbn() const{
+            return m_isbn;
+        }
+        std::string Book::getCoverPath() const{
+            return m_coverPath;
+        }
+
 
         // Setters
         void Book::setTitle(const std::string& newTitle) {
@@ -88,6 +101,18 @@ namespace Libmark {
         }
         void Book::updateStatus(BookStatus newStatus) {
             m_status = newStatus;
+        }
+        void Book::setRating(float newRating){
+            m_rating = newRating;
+        }
+        void Book::setReview(const std::string& newReview){
+            m_review = newReview;
+        }
+        void Book::setIsbn(const std::string& newIsbn){
+            m_isbn = newIsbn;
+        }
+        void Book::setCoverPath(const std::string& newCoverPath){
+            m_coverPath = newCoverPath;
         }
 
 } //namespace Libmark

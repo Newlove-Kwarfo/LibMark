@@ -26,7 +26,7 @@ namespace Libmark {
         Book(const std::string& title, const std::string& author, int totalPages, int currentPage, BookType type, BookStatus status);
         
         //Constructor2 - without currentPage
-        Book(const std::string& title, const std::string& author, int totalPages);
+        Book(const std::string& title, const std::string& author, int totalPages, BookType type, BookStatus status);
 
         //Behaviours
         void addNote(const Note& newNote);
@@ -44,6 +44,10 @@ namespace Libmark {
         int getCurrentPage() const;
         const std::vector<Note>& getNotes() const; //retreives all notes belonging to book
         const std::vector<std::string>& getGenres() const;
+        float getRating() const;
+        std::string getReview() const;
+        std::string getIsbn() const;
+        std::string getCoverPath() const;
 
         //Setter
         void setTitle(const std::string& newTitle);
@@ -53,6 +57,10 @@ namespace Libmark {
         void setTotalPages(int pages);
         void setCurrentPage(int page);
         void updateStatus(BookStatus newStatus);
+        void setRating(float newRating);
+        void setReview(const std::string& newReview);
+        void setIsbn(const std::string& newIsbn);
+        void setCoverPath(const std::string& newCoverPath);
 
     
     private:
@@ -65,5 +73,10 @@ namespace Libmark {
         int m_currentPage;
         std::vector<Note> m_notes;
         std::vector<std::string> m_genres;
+        float m_rating;
+        std::string m_review;
+        std::string m_isbn;
+        std::string m_coverPath;
+
     }; //class Book
 } // namespace Libmark
