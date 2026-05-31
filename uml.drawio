@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36">
   <diagram name="Page-1" id="xq89KSMnmQSlGmycQ0H4">
-    <mxGraphModel dx="505" dy="388" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+    <mxGraphModel dx="1717" dy="937" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -131,7 +131,7 @@
           <mxGeometry height="26" width="290" y="1047.6842105263158" as="geometry" />
         </mxCell>
         <mxCell id="q35ef6I-YDayS632J-6n-294" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=31.11111111111111;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;fillColor=#5D7F99;strokeColor=#D0CEE2;fontColor=#1A1A1A;labelBackgroundColor=none;rounded=1;sketch=1;curveFitting=1;jiggle=2;" value="Note" vertex="1">
-          <mxGeometry height="287.1111111111111" width="219" x="110" y="1212" as="geometry" />
+          <mxGeometry height="287.1111111111111" width="219" x="50" y="1340.71" as="geometry" />
         </mxCell>
         <mxCell id="q35ef6I-YDayS632J-6n-295" parent="q35ef6I-YDayS632J-6n-294" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=none;fontColor=#1A1A1A;rounded=1;sketch=1;curveFitting=1;jiggle=2;" value="-int pageNumber" vertex="1">
           <mxGeometry height="31" width="219" y="31.11111111111111" as="geometry" />
@@ -161,7 +161,7 @@
           <mxGeometry height="31" width="219" y="256.1111111111111" as="geometry" />
         </mxCell>
         <mxCell id="q35ef6I-YDayS632J-6n-304" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=29.818181818181817;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;fillColor=#5D7F99;strokeColor=#D0CEE2;fontColor=#1A1A1A;labelBackgroundColor=none;rounded=1;sketch=1;curveFitting=1;jiggle=2;" value="PurchaseDetails" vertex="1">
-          <mxGeometry height="337.8181818181818" width="280" x="379" y="1188" as="geometry" />
+          <mxGeometry height="337.8181818181818" width="280" x="510" y="1290" as="geometry" />
         </mxCell>
         <mxCell id="q35ef6I-YDayS632J-6n-305" parent="q35ef6I-YDayS632J-6n-304" style="text;strokeColor=none;fillColor=#5D7F99;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=none;fontColor=#1A1A1A;rounded=1;sketch=1;curveFitting=1;jiggle=2;" value="-float bookPrice" vertex="1">
           <mxGeometry height="30" width="280" y="29.818181818181817" as="geometry" />

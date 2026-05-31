@@ -14,6 +14,10 @@ namespace Libmark {
         std::string getNoteContent() const;
         std::string getDateCreated() const;
 
+        //Setters
+        void setPageNumber(int newPageNumber);
+        void setNoteContent(const std::string newConent);
+
     private:
         int m_pageNumber; //m_ conventionally denotes member variable of function
         std::string m_noteContent;

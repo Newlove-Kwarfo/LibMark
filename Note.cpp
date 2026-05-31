@@ -28,4 +28,13 @@ namespace Libmark {
     std::string Note::getDateCreated() const {
         return m_dateCreated;
     }
+
+    //Setters
+    void Note::setPageNumber(int newPageNumber){
+        m_pageNumber = newPageNumber;
+    }
+    void Note::setNoteContent(const std::string newConent){
+        m_noteContent = newConent;
+    }
+
 } // namespace Libmark
