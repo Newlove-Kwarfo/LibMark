@@ -1,3 +1,4 @@
+//This is main.cpp
 #include <iostream>
 #include <string>
 #include <vector>
@@ -99,3 +100,6 @@ int main(){
 
 //run this in terminal to compile .exe file
 //g++ -std=c++17 main.cpp Book.cpp Note.cpp -o libmarkTest.exe
+
+//run "./libmarkTest.exe" in powershell terminal to run file
+// or in gitbash terminal run "winpty ./libmarkTest.exe"

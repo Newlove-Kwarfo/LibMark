@@ -1,3 +1,4 @@
+//This is Note.h
 #pragma once
 # include <string>
 
