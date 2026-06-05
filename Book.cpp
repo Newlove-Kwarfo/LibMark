@@ -30,8 +30,16 @@ namespace Libmark {
             }
         };
 
-        void Book::addGenre(const std::string& genre){
+        void Book::addGenre(const std::string& genre){ //adding genre to genre list
             if (!genre.empty()){m_genres.push_back(genre);}
+        }
+
+        void Book::loadGenres(const std::vector<std::string>& genres){ //adding genre to genre list
+            m_genres = genres;
+        }
+
+        void Book::loadNotes(const std::vector<Note>& notes){ //adding notes to notes list
+            m_notes = notes;
         }
 
         float Book::calculateProgress() const {

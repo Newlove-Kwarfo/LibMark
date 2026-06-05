@@ -33,6 +33,8 @@ namespace Libmark {
         void addNote(const Note& newNote);
         void removeNote(int index);
         void addGenre(const std::string& genre);
+        void loadGenres(const std::vector<std::string>& genres);
+        void loadNotes(const std::vector<Note>& notes);
         float calculateProgress() const;
 
         //Getters
