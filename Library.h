@@ -21,10 +21,8 @@ namespace Libmark {
         int saveToFile();
         int loadFromFile();
 
+        //Setters
+        void setStorageFileName(const std::string& filename);
+
     }; // class Library
 } //namespace Libmark
-
-/*
-
-g++ -std=c++17 main.cpp Book.cpp Note.cpp Library.cpp -o libmarkTest.exe
-*/

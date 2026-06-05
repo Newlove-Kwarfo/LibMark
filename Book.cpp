@@ -97,7 +97,7 @@ namespace Libmark {
             m_author = newAuthor;
         }
         void Book::setLanguage(const std::string& lang) {
-            m_author = lang;
+            m_language = lang;
         }
         void Book::setCurrentPage(int page) {
             m_currentPage = page;

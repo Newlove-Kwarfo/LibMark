@@ -10,6 +10,11 @@ namespace Libmark{
 
     Library::Library() {}; //default constructor
 
+    //Setters
+    void Library::setStorageFileName(const std::string& filename){
+        m_storageFileName = filename;
+    }
+
     //Behaviours
     void Library::addBook(const Book& book){
         m_books.push_back(book);
@@ -131,10 +136,21 @@ namespace Libmark{
             std::string author, language, review, isbn, coverPath, statusStr, typeStr; //variables to store string and enum info read
             std::string totalPagesStr, currentPageStr, ratingsStr; //varuiable for the number values
 
+            // 1. Read Strings & Enums
             std::getline(inFile, author);
             std::getline(inFile, language);
             std::getline(inFile, statusStr);
             std::getline(inFile, typeStr);
+
+            // 2. Read Numbers
+            std::getline(inFile, totalPagesStr);
+            std::getline(inFile, currentPageStr);
+            std::getline(inFile, ratingsStr);
+
+            // 3. Read Remaining Core Attributes (MOVED UP HERE TO MATCH SAVE ORDER)
+            std::getline(inFile, review);
+            std::getline(inFile, isbn);
+            std::getline(inFile, coverPath);
 
             //Mapping back read enums
             Libmark::BookStatus status = Libmark::BookStatus::WANT_TO_READ; //default status
@@ -148,18 +164,6 @@ namespace Libmark{
             else if (typeStr == "Ebook") {type = Libmark::BookType::EBOOK;}
             else if (typeStr == "Audiobook") {type = Libmark::BookType::AUDIOBOOK;}
 
-            std::getline(inFile, totalPagesStr);
-            std::getline(inFile, currentPageStr);
-            std::getline(inFile, ratingsStr);
-            
-            // casting numerical values
-            int totalPages = std::stoi(totalPagesStr);
-            int currentPage = std::stoi(currentPageStr);
-            float ratings = std::stof(ratingsStr);
-
-            std::getline(inFile, review);
-            std::getline(inFile, isbn);
-            std::getline(inFile, coverPath);
 
             //getting book genres
             std::string genreNumberStr;
@@ -172,6 +176,12 @@ namespace Libmark{
                 std::getline(inFile, genre);
                 genres.push_back(genre);
             }
+
+            // casting numerical values
+            int totalPages = std::stoi(totalPagesStr);
+            int currentPage = std::stoi(currentPageStr);
+            float ratings = std::stof(ratingsStr);
+
 
             //getting notes
             std::string noteNumberStr;
@@ -190,12 +200,15 @@ namespace Libmark{
                 Note loadedNote(pageNumber, content, creationDate);
                 notes.push_back(loadedNote);
 
+                
+
             }
 
             //rebuilding the book based of the gathered info
-            Book loadedBook(title, author, totalPages, currentPage, type, status);
+            Book loadedBook(title, author,  totalPages, currentPage, type, status);
 
             //Book loadedBook(title, author, language, status, type, totalPages, currentPage, rating, review, isbn, coverPath, genres, notes);
+            loadedBook.setAuthor(author);
             loadedBook.setLanguage(language);
             loadedBook.setRating(ratings);
             loadedBook.setReview(review);
